@@ -1,0 +1,22 @@
+{
+  "id": "stp:ecommerce.001",
+  "ref": "product",
+  "domain": "ecommerce",
+  "label": "Product",
+  "aliases": [
+    "product",
+    "item",
+    "SKU",
+    "listing",
+    "goods",
+    "merchandise"
+  ],
+  "definition": "A discrete item or service offered for purchase, identified by a unique identifier, associated with pricing, availability, and descriptive attributes.",
+  "related": [
+    "stp:ecommerce.002",
+    "stp:ecommerce.003"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

@@ -1,0 +1,20 @@
+{
+  "id": "stp:ai.ml.005",
+  "ref": "attention_mechanism",
+  "domain": "ai.ml",
+  "label": "Attention Mechanism",
+  "aliases": [
+    "attention",
+    "self-attention",
+    "multi-head attention",
+    "cross-attention",
+    "scaled dot-product attention"
+  ],
+  "definition": "A mechanism enabling models to selectively weight the relevance of different input positions when producing each output, enabling long-range dependency modeling.",
+  "related": [
+    "stp:ai.ml.004"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

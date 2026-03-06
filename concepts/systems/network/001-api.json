@@ -1,0 +1,21 @@
+{
+  "id": "stp:systems.network.001",
+  "ref": "api",
+  "domain": "systems.network",
+  "label": "API",
+  "aliases": [
+    "API",
+    "application programming interface",
+    "REST API",
+    "HTTP API",
+    "web API",
+    "endpoint"
+  ],
+  "definition": "A defined interface enabling programmatic interaction between software systems, specifying available operations, data formats, authentication requirements, and error handling.",
+  "related": [
+    "stp:systems.network.002"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

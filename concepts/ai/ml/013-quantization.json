@@ -1,0 +1,23 @@
+{
+  "id": "stp:ai.ml.013",
+  "ref": "quantization",
+  "domain": "ai.ml",
+  "label": "Quantization",
+  "aliases": [
+    "quantization",
+    "model quantization",
+    "int8",
+    "int4",
+    "GGUF",
+    "4-bit quantization",
+    "weight quantization"
+  ],
+  "definition": "A model compression technique that reduces the numerical precision of weights and activations from floating-point to lower-bit integer representations, enabling deployment on resource-constrained hardware.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.ml.014"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

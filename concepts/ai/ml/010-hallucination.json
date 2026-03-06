@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.010",
+  "ref": "hallucination",
+  "domain": "ai.ml",
+  "label": "Hallucination",
+  "aliases": [
+    "hallucination",
+    "confabulation",
+    "factual error",
+    "fabrication",
+    "LLM hallucination"
+  ],
+  "definition": "The generation of factually incorrect, unsupported, or fabricated content by a language model presented with apparent confidence, arising from pattern completion rather than grounded retrieval.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.search.003"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

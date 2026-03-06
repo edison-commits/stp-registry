@@ -1,65 +1,57 @@
-# Contributing to STP Registry
+# Contributing to the STP Registry
 
-Thanks for helping grow the registry. A few things to know before you open a PR.
+## How to propose a new concept
 
-## What belongs here
+1. Fork this repo
+2. Copy the template below into the correct domain folder
+3. Name the file `NNN-concept_ref.json` (next available number in the domain)
+4. Open a PR with title: `[concept] stp:domain.sub.NNN concept_ref`
+5. A maintainer will review within 7 days
 
-The registry is a **shared vocabulary** — concepts that are stable, well-defined, and likely to appear in STP blocks across many different sites and agents. It is not:
-
-- A glossary of every term in a field
-- A collection of product names or brand concepts
-- A place for contested or speculative concepts (those belong in block-level claims with low confidence)
-
-If a concept is specific to one site or one use case, it doesn't belong in the shared registry. Authors can use arbitrary `ref` strings in their blocks — they just won't benefit from cross-site interoperability for those concepts.
-
-## Before you open a PR
-
-1. **Search first.** The concept may already exist under a different `ref`. Check `aliases` in each domain file.
-
-2. **Pick the right domain.** Cross-domain concepts go in their primary origin domain, not all domains. Use `aliases` to bridge.
-
-3. **Write a real description.** One sentence. Precise. Avoids circular definitions ("X is a type of X").
-
-4. **Include a real `canonical_ref`.** arXiv papers, W3C specs, and Wikipedia articles with solid sourcing are good. Blog posts are not.
-
-5. **Check the ID sequence.** IDs are sequential within a domain. If the last concept in `ai.ml.json` is `stp:ai.ml.006`, your new concept is `stp:ai.ml.007`. Never skip, never reuse.
-
-## What a good PR looks like
+## Concept template
 
 ```json
 {
-  "id": "stp:ai.ml.007",
-  "ref": "mixture_of_experts",
-  "label": "Mixture of Experts",
-  "description": "Architecture where a router selects a sparse subset of specialized sub-networks (experts) per input, enabling large model capacity at lower inference cost",
-  "aliases": ["MoE", "sparse MoE", "expert routing"],
-  "introduced": "1991",
-  "canonical_ref": "https://arxiv.org/abs/1701.06538"
+  "id":         "stp:DOMAIN.SUB.NNN",
+  "ref":        "snake_case_name",
+  "domain":     "domain.subdomain",
+  "label":      "Human Readable Label",
+  "aliases":    ["alias one", "alias two", "abbreviation"],
+  "definition": "Clear, precise definition in 1-3 sentences. No marketing language.",
+  "related":    ["stp:domain.sub.NNN"],
+  "protected":  false,
+  "added":      "YYYY-MM-DD",
+  "version":    1
 }
 ```
 
-And update `concept_count` in `index.json`.
+## Acceptance criteria
 
-## Deprecating a concept
+- Definition must be precise and domain-neutral
+- At least 3 aliases covering common usage variants
+- At least 1 related concept (or explicit note if truly standalone)
+- ref must be snake_case, all lowercase, no hyphens
+- ID must follow `stp:domain.subdomain.NNN` format with next available number
 
-If a concept becomes obsolete or is superseded:
+## Proposing a new domain
 
-```json
-{
-  "id": "stp:ai.ml.003",
-  "ref": "rag",
-  "deprecated": true,
-  "deprecated_reason": "Superseded by more precise concepts",
-  "successor_id": "stp:ai.search.001"
-}
-```
+Open an issue with title `[domain] domain.subdomain` and explain:
+- What class of concepts it covers
+- Why it doesn't fit existing domains
+- At least 5 seed concepts you'd add immediately
 
-The entry stays. The ID stays. Only `deprecated: true` is added.
+## Protected namespaces
 
-## New domains
+`medical.*`, `legal.*`, `finance.*` require:
+- Expert credentials in the relevant field
+- At minimum 2 reviewer approvals
+- 14-day staging period before merge
 
-Open an issue before writing any code. A domain proposal needs:
+Do not open PRs to protected namespaces without first opening an issue.
 
-- At least 5 candidate concepts ready to add
-- A clear boundary (what's in, what's out)
-- A short argument for why this domain is distinct from existing ones
+## What gets rejected
+
+- Concepts too specific to a single product or company
+- Definitions that are opinionated or non-neutral
+- Duplicate refs (check aliases.json first)
+- Missing or vague definitions

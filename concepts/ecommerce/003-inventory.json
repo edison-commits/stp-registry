@@ -1,0 +1,22 @@
+{
+  "id": "stp:ecommerce.003",
+  "ref": "inventory",
+  "domain": "ecommerce",
+  "label": "Inventory",
+  "aliases": [
+    "inventory",
+    "stock",
+    "availability",
+    "in stock",
+    "out of stock",
+    "quantity available"
+  ],
+  "definition": "The quantity of a product available for purchase at a given time, including status indicators (in stock, low stock, out of stock, pre-order) and warehouse location.",
+  "related": [
+    "stp:ecommerce.001",
+    "stp:ecommerce.004"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

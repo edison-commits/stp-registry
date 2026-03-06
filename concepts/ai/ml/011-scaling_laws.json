@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.011",
+  "ref": "scaling_laws",
+  "domain": "ai.ml",
+  "label": "Scaling Laws",
+  "aliases": [
+    "scaling laws",
+    "scaling",
+    "Chinchilla scaling",
+    "compute scaling",
+    "neural scaling"
+  ],
+  "definition": "Empirical power-law relationships between model performance and scale (parameters, data, compute), enabling prediction of capability improvements from increased resources.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.ml.009"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

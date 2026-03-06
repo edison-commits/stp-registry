@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.003",
+  "ref": "gradient_descent",
+  "domain": "ai.ml",
+  "label": "Gradient Descent",
+  "aliases": [
+    "gradient descent",
+    "SGD",
+    "stochastic gradient descent",
+    "optimizer",
+    "Adam",
+    "backpropagation"
+  ],
+  "definition": "An iterative optimization algorithm that minimizes a loss function by updating parameters in the direction opposite to the gradient, enabling neural network learning.",
+  "related": [
+    "stp:ai.ml.002"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

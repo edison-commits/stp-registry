@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.014",
+  "ref": "mixture_of_experts",
+  "domain": "ai.ml",
+  "label": "Mixture of Experts",
+  "aliases": [
+    "MoE",
+    "mixture of experts",
+    "mixture-of-experts",
+    "sparse MoE",
+    "expert routing"
+  ],
+  "definition": "A neural network architecture using a gating mechanism to dynamically route inputs to specialized sub-networks (experts), enabling parameter scaling without proportional compute increases.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.ml.004"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

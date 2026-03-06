@@ -1,0 +1,20 @@
+{
+  "id": "stp:systems.network.003",
+  "ref": "protocol",
+  "domain": "systems.network",
+  "label": "Protocol",
+  "aliases": [
+    "protocol",
+    "communication protocol",
+    "network protocol",
+    "standard",
+    "specification"
+  ],
+  "definition": "A formal set of rules defining how data is formatted, transmitted, and interpreted between systems, enabling interoperability across heterogeneous implementations.",
+  "related": [
+    "stp:systems.network.001"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

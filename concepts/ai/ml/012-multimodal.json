@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.012",
+  "ref": "multimodal",
+  "domain": "ai.ml",
+  "label": "Multimodal",
+  "aliases": [
+    "multimodal",
+    "multimodal model",
+    "vision-language model",
+    "VLM",
+    "image-text model"
+  ],
+  "definition": "A model architecture capable of processing and relating information across multiple modalities \u2014 text, images, audio, video \u2014 within a unified representational framework.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.ml.004"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

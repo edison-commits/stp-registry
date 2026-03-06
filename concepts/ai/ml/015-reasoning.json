@@ -1,0 +1,22 @@
+{
+  "id": "stp:ai.ml.015",
+  "ref": "reasoning",
+  "domain": "ai.ml",
+  "label": "Reasoning",
+  "aliases": [
+    "reasoning",
+    "chain-of-thought",
+    "CoT",
+    "step-by-step reasoning",
+    "logical reasoning",
+    "multi-step reasoning"
+  ],
+  "definition": "The capacity of a language model to perform multi-step logical inference, mathematical problem solving, and structured deliberation, particularly when given explicit intermediate computation steps.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.agents.001"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

@@ -1,0 +1,14 @@
+{
+  "stp_version": "0.1",
+  "domain": "semanticweb.dev",
+  "keys": [
+    {
+      "kid": "stp-registry-2026-03",
+      "algorithm": "Ed25519",
+      "use": "verify",
+      "status": "active",
+      "created": "2026-03-06",
+      "public_key": "REPLACE_WITH_ACTUAL_ED25519_PUBLIC_KEY"
+    }
+  ]
+}

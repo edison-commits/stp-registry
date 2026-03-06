@@ -1,0 +1,20 @@
+{
+  "id": "stp:ai.ml.004",
+  "ref": "transformer",
+  "domain": "ai.ml",
+  "label": "Transformer",
+  "aliases": [
+    "transformer model",
+    "transformer architecture",
+    "transformer network"
+  ],
+  "definition": "A neural network architecture based entirely on attention mechanisms, dispensing with recurrence, enabling highly parallelizable training on sequential data.",
+  "related": [
+    "stp:ai.ml.005",
+    "stp:ai.ml.001",
+    "stp:ai.ml.006"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

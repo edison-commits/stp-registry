@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.008",
+  "ref": "rlhf",
+  "domain": "ai.ml",
+  "label": "Reinforcement Learning from Human Feedback",
+  "aliases": [
+    "RLHF",
+    "reinforcement learning from human feedback",
+    "human feedback",
+    "preference learning",
+    "reward modeling"
+  ],
+  "definition": "A training methodology that uses human preference judgments to train a reward model, which then guides policy optimization via reinforcement learning to align model outputs with human values.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.ml.007"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

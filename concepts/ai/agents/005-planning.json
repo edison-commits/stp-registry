@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.agents.005",
+  "ref": "planning",
+  "domain": "ai.agents",
+  "label": "Planning",
+  "aliases": [
+    "planning",
+    "task planning",
+    "goal decomposition",
+    "hierarchical planning",
+    "tree-of-thought"
+  ],
+  "definition": "The process by which an agent decomposes a high-level goal into executable sub-tasks, reasons about dependencies and sequencing, and produces an action plan.",
+  "related": [
+    "stp:ai.agents.001",
+    "stp:ai.ml.015"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

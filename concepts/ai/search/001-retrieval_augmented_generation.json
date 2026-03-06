@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.search.001",
+  "ref": "retrieval_augmented_generation",
+  "domain": "ai.search",
+  "label": "Retrieval-Augmented Generation",
+  "aliases": [
+    "RAG",
+    "retrieval-augmented generation",
+    "retrieval augmented generation",
+    "grounded generation"
+  ],
+  "definition": "A technique combining dense retrieval of relevant document chunks with language model generation, enabling models to produce factually grounded outputs from external knowledge bases.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.search.002",
+    "stp:ai.ml.010"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

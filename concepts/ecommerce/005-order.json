@@ -1,0 +1,20 @@
+{
+  "id": "stp:ecommerce.005",
+  "ref": "order",
+  "domain": "ecommerce",
+  "label": "Order",
+  "aliases": [
+    "order",
+    "purchase",
+    "transaction",
+    "order confirmation",
+    "purchase order"
+  ],
+  "definition": "A completed or in-progress commercial transaction recording the purchase of one or more products, associated with payment, shipping, and fulfillment status.",
+  "related": [
+    "stp:ecommerce.004"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

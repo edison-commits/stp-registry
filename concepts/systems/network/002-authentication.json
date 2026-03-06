@@ -1,0 +1,22 @@
+{
+  "id": "stp:systems.network.002",
+  "ref": "authentication",
+  "domain": "systems.network",
+  "label": "Authentication",
+  "aliases": [
+    "authentication",
+    "auth",
+    "OAuth",
+    "API key",
+    "JWT",
+    "bearer token",
+    "credentials"
+  ],
+  "definition": "The process of verifying the identity of a user or system attempting to access a resource, typically via cryptographic tokens, credentials, or delegated authorization protocols.",
+  "related": [
+    "stp:systems.network.001"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

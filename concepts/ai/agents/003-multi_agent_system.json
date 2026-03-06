@@ -1,0 +1,22 @@
+{
+  "id": "stp:ai.agents.003",
+  "ref": "multi_agent_system",
+  "domain": "ai.agents",
+  "label": "Multi-Agent System",
+  "aliases": [
+    "multi-agent",
+    "multi-agent system",
+    "agent swarm",
+    "agent network",
+    "agentic workflow",
+    "agent orchestration"
+  ],
+  "definition": "A system comprising multiple AI agents that collaborate, communicate, and coordinate to accomplish tasks that exceed the capability of any single agent.",
+  "related": [
+    "stp:ai.agents.001",
+    "stp:ai.agents.004"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

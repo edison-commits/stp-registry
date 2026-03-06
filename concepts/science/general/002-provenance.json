@@ -1,0 +1,21 @@
+{
+  "id": "stp:science.002",
+  "ref": "provenance",
+  "domain": "science.general",
+  "label": "Provenance",
+  "aliases": [
+    "provenance",
+    "source",
+    "citation",
+    "attribution",
+    "origin",
+    "lineage"
+  ],
+  "definition": "A record of the origin, derivation history, and custodial chain of a piece of information, enabling assessment of its reliability and auditability.",
+  "related": [
+    "stp:science.001"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

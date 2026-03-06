@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.agents.002",
+  "ref": "tool_use",
+  "domain": "ai.agents",
+  "label": "Tool Use",
+  "aliases": [
+    "tool use",
+    "tool calling",
+    "function calling",
+    "API calling",
+    "tool augmentation"
+  ],
+  "definition": "The capability of an AI agent to invoke external tools \u2014 APIs, code interpreters, web browsers, databases \u2014 to extend its abilities beyond language generation alone.",
+  "related": [
+    "stp:ai.agents.001",
+    "stp:ai.agents.003"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

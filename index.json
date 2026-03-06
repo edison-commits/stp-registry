@@ -1,61 +1,239 @@
 {
-  "registry": "STP Concept Registry",
-  "version": "1.0.0",
-  "updated": "2026-03-05",
-  "protocol": "STP/0.1",
-  "description": "Canonical concept identifiers for the Semantic Transfer Protocol. Every concept has a stable ID in the format stp:domain.subdomain.NNN.",
-  "spec": "https://github.com/edison-commits/stp-protocol/blob/main/spec/STP-0.1.md",
-  "source": "https://github.com/edison-commits/stp-registry",
-  "domains": [
+  "stp_version": "0.1",
+  "registry": "semanticweb.dev",
+  "updated": "2026-03-06",
+  "concept_count": 33,
+  "concepts": [
     {
-      "id": "ai.ml",
-      "label": "Machine Learning",
-      "description": "Foundational models, training methods, and inference techniques",
-      "file": "concepts/ai.ml.json",
-      "concept_count": 6
+      "id": "stp:ai.agents.001",
+      "ref": "agent",
+      "label": "AI Agent",
+      "domain": "ai.agents",
+      "path": "concepts/ai/agents/001-agent.json"
     },
     {
-      "id": "ai.agents",
-      "label": "AI Agents",
-      "description": "Autonomous systems that perceive, reason, plan, and act",
-      "file": "concepts/ai.agents.json",
-      "concept_count": 5
+      "id": "stp:ai.agents.002",
+      "ref": "tool_use",
+      "label": "Tool Use",
+      "domain": "ai.agents",
+      "path": "concepts/ai/agents/002-tool_use.json"
     },
     {
-      "id": "ai.search",
-      "label": "Search & Retrieval",
-      "description": "Semantic search, embeddings, and information retrieval for AI systems",
-      "file": "concepts/ai.search.json",
-      "concept_count": 3
+      "id": "stp:ai.agents.003",
+      "ref": "multi_agent_system",
+      "label": "Multi-Agent System",
+      "domain": "ai.agents",
+      "path": "concepts/ai/agents/003-multi_agent_system.json"
     },
     {
-      "id": "data.graph",
-      "label": "Graph & Knowledge",
-      "description": "Structured data models for relational knowledge representation",
-      "file": "concepts/data.graph.json",
-      "concept_count": 2
+      "id": "stp:ai.agents.004",
+      "ref": "agent_memory",
+      "label": "Agent Memory",
+      "domain": "ai.agents",
+      "path": "concepts/ai/agents/004-agent_memory.json"
     },
     {
-      "id": "systems.network",
-      "label": "Networking & Protocols",
-      "description": "Communication standards for distributed systems and agents",
-      "file": "concepts/systems.network.json",
-      "concept_count": 2
+      "id": "stp:ai.agents.005",
+      "ref": "planning",
+      "label": "Planning",
+      "domain": "ai.agents",
+      "path": "concepts/ai/agents/005-planning.json"
     },
     {
-      "id": "physics.quantum",
-      "label": "Quantum Computing",
-      "description": "Quantum information processing and error correction",
-      "file": "concepts/physics.quantum.json",
-      "concept_count": 2
+      "id": "stp:ai.ml.001",
+      "ref": "neural_network",
+      "label": "Neural Network",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/001-neural_network.json"
+    },
+    {
+      "id": "stp:ai.ml.002",
+      "ref": "training",
+      "label": "Model Training",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/002-training.json"
+    },
+    {
+      "id": "stp:ai.ml.003",
+      "ref": "gradient_descent",
+      "label": "Gradient Descent",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/003-gradient_descent.json"
+    },
+    {
+      "id": "stp:ai.ml.004",
+      "ref": "transformer",
+      "label": "Transformer",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/004-transformer.json"
+    },
+    {
+      "id": "stp:ai.ml.005",
+      "ref": "attention_mechanism",
+      "label": "Attention Mechanism",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/005-attention_mechanism.json"
+    },
+    {
+      "id": "stp:ai.ml.006",
+      "ref": "large_language_model",
+      "label": "Large Language Model",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/006-large_language_model.json"
+    },
+    {
+      "id": "stp:ai.ml.007",
+      "ref": "fine_tuning",
+      "label": "Fine-Tuning",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/007-fine_tuning.json"
+    },
+    {
+      "id": "stp:ai.ml.008",
+      "ref": "rlhf",
+      "label": "Reinforcement Learning from Human Feedback",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/008-rlhf.json"
+    },
+    {
+      "id": "stp:ai.ml.009",
+      "ref": "emergent_behavior",
+      "label": "Emergent Behavior",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/009-emergent_behavior.json"
+    },
+    {
+      "id": "stp:ai.ml.010",
+      "ref": "hallucination",
+      "label": "Hallucination",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/010-hallucination.json"
+    },
+    {
+      "id": "stp:ai.ml.011",
+      "ref": "scaling_laws",
+      "label": "Scaling Laws",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/011-scaling_laws.json"
+    },
+    {
+      "id": "stp:ai.ml.012",
+      "ref": "multimodal",
+      "label": "Multimodal",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/012-multimodal.json"
+    },
+    {
+      "id": "stp:ai.ml.013",
+      "ref": "quantization",
+      "label": "Quantization",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/013-quantization.json"
+    },
+    {
+      "id": "stp:ai.ml.014",
+      "ref": "mixture_of_experts",
+      "label": "Mixture of Experts",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/014-mixture_of_experts.json"
+    },
+    {
+      "id": "stp:ai.ml.015",
+      "ref": "reasoning",
+      "label": "Reasoning",
+      "domain": "ai.ml",
+      "path": "concepts/ai/ml/015-reasoning.json"
+    },
+    {
+      "id": "stp:ai.search.001",
+      "ref": "retrieval_augmented_generation",
+      "label": "Retrieval-Augmented Generation",
+      "domain": "ai.search",
+      "path": "concepts/ai/search/001-retrieval_augmented_generation.json"
+    },
+    {
+      "id": "stp:ai.search.002",
+      "ref": "embedding",
+      "label": "Embedding",
+      "domain": "ai.search",
+      "path": "concepts/ai/search/002-embedding.json"
+    },
+    {
+      "id": "stp:ai.search.003",
+      "ref": "knowledge_graph",
+      "label": "Knowledge Graph",
+      "domain": "ai.search",
+      "path": "concepts/ai/search/003-knowledge_graph.json"
+    },
+    {
+      "id": "stp:ecommerce.001",
+      "ref": "product",
+      "label": "Product",
+      "domain": "ecommerce",
+      "path": "concepts/ecommerce/001-product.json"
+    },
+    {
+      "id": "stp:ecommerce.002",
+      "ref": "price",
+      "label": "Price",
+      "domain": "ecommerce",
+      "path": "concepts/ecommerce/002-price.json"
+    },
+    {
+      "id": "stp:ecommerce.003",
+      "ref": "inventory",
+      "label": "Inventory",
+      "domain": "ecommerce",
+      "path": "concepts/ecommerce/003-inventory.json"
+    },
+    {
+      "id": "stp:ecommerce.004",
+      "ref": "cart",
+      "label": "Shopping Cart",
+      "domain": "ecommerce",
+      "path": "concepts/ecommerce/004-cart.json"
+    },
+    {
+      "id": "stp:ecommerce.005",
+      "ref": "order",
+      "label": "Order",
+      "domain": "ecommerce",
+      "path": "concepts/ecommerce/005-order.json"
+    },
+    {
+      "id": "stp:science.001",
+      "ref": "confidence",
+      "label": "Confidence Score",
+      "domain": "science.general",
+      "path": "concepts/science/general/001-confidence.json"
+    },
+    {
+      "id": "stp:science.002",
+      "ref": "provenance",
+      "label": "Provenance",
+      "domain": "science.general",
+      "path": "concepts/science/general/002-provenance.json"
+    },
+    {
+      "id": "stp:systems.network.001",
+      "ref": "api",
+      "label": "API",
+      "domain": "systems.network",
+      "path": "concepts/systems/network/001-api.json"
+    },
+    {
+      "id": "stp:systems.network.002",
+      "ref": "authentication",
+      "label": "Authentication",
+      "domain": "systems.network",
+      "path": "concepts/systems/network/002-authentication.json"
+    },
+    {
+      "id": "stp:systems.network.003",
+      "ref": "protocol",
+      "label": "Protocol",
+      "domain": "systems.network",
+      "path": "concepts/systems/network/003-protocol.json"
     }
-  ],
-  "total_concepts": 20,
-  "id_format": "stp:domain.subdomain.NNN",
-  "id_example": "stp:ai.ml.006",
-  "fetch": {
-    "index": "https://raw.githubusercontent.com/edison-commits/stp-registry/main/index.json",
-    "concept": "https://raw.githubusercontent.com/edison-commits/stp-registry/main/concepts/{domain}.json"
-  },
-  "contributing": "https://github.com/edison-commits/stp-registry/blob/main/README.md#contributing"
+  ]
 }

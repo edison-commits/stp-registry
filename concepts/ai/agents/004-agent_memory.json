@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.agents.004",
+  "ref": "agent_memory",
+  "domain": "ai.agents",
+  "label": "Agent Memory",
+  "aliases": [
+    "agent memory",
+    "long-term memory",
+    "memory",
+    "episodic memory",
+    "semantic memory",
+    "working memory"
+  ],
+  "definition": "Mechanisms enabling agents to store, retrieve, and reason over information beyond the immediate context window, including episodic records of past actions and semantic knowledge stores.",
+  "related": [
+    "stp:ai.agents.001"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

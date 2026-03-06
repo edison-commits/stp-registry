@@ -1,0 +1,65 @@
+{
+  "stp_version": "0.1",
+  "updated": "2026-03-06",
+  "domains": [
+    {
+      "id": "ai",
+      "label": "Artificial Intelligence",
+      "protected": false,
+      "subdomains": [
+        { "id": "ai.ml",     "label": "Machine Learning",        "protected": false },
+        { "id": "ai.agents", "label": "AI Agents & Autonomy",    "protected": false },
+        { "id": "ai.search", "label": "Information Retrieval",   "protected": false }
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "label": "E-Commerce",
+      "protected": false,
+      "subdomains": [
+        { "id": "ecommerce.product",  "label": "Products & Inventory", "protected": false },
+        { "id": "ecommerce.commerce", "label": "Transactions & Cart",  "protected": false }
+      ]
+    },
+    {
+      "id": "systems",
+      "label": "Computer Systems",
+      "protected": false,
+      "subdomains": [
+        { "id": "systems.network", "label": "Networking & Protocols", "protected": false }
+      ]
+    },
+    {
+      "id": "science",
+      "label": "Science",
+      "protected": false,
+      "subdomains": [
+        { "id": "science.general", "label": "General Scientific Concepts", "protected": false }
+      ]
+    },
+    {
+      "id": "medical",
+      "label": "Medical & Clinical",
+      "protected": true,
+      "review_required": true,
+      "reviewers": ["pending"],
+      "subdomains": []
+    },
+    {
+      "id": "legal",
+      "label": "Legal",
+      "protected": true,
+      "review_required": true,
+      "reviewers": ["pending"],
+      "subdomains": []
+    },
+    {
+      "id": "finance",
+      "label": "Finance",
+      "protected": true,
+      "review_required": true,
+      "reviewers": ["pending"],
+      "subdomains": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.search.002",
+  "ref": "embedding",
+  "domain": "ai.search",
+  "label": "Embedding",
+  "aliases": [
+    "embedding",
+    "vector embedding",
+    "dense vector",
+    "semantic embedding",
+    "text embedding"
+  ],
+  "definition": "A dense numerical representation of text or other data in a continuous vector space where semantic similarity corresponds to geometric proximity.",
+  "related": [
+    "stp:ai.search.001",
+    "stp:ai.ml.001"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

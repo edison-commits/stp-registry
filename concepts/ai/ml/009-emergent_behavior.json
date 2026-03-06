@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.009",
+  "ref": "emergent_behavior",
+  "domain": "ai.ml",
+  "label": "Emergent Behavior",
+  "aliases": [
+    "emergent abilities",
+    "emergent capabilities",
+    "emergence",
+    "emergent behavior"
+  ],
+  "definition": "Capabilities that appear in large models at certain scale thresholds without being explicitly trained for. Note: current confidence is moderate (0.41) following evidence that some apparent emergence may be artifacts of evaluation metric choice.",
+  "confidence_note": "Contested concept. See Schaeffer et al. 2023.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.ml.011"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

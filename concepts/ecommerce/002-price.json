@@ -1,0 +1,21 @@
+{
+  "id": "stp:ecommerce.002",
+  "ref": "price",
+  "domain": "ecommerce",
+  "label": "Price",
+  "aliases": [
+    "price",
+    "cost",
+    "amount",
+    "retail price",
+    "sale price",
+    "MSRP"
+  ],
+  "definition": "The monetary value assigned to a product or service, potentially including variants for currency, sale status, membership discounts, and quantity breaks.",
+  "related": [
+    "stp:ecommerce.001"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

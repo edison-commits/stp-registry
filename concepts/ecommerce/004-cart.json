@@ -1,0 +1,21 @@
+{
+  "id": "stp:ecommerce.004",
+  "ref": "cart",
+  "domain": "ecommerce",
+  "label": "Shopping Cart",
+  "aliases": [
+    "cart",
+    "shopping cart",
+    "basket",
+    "bag",
+    "checkout"
+  ],
+  "definition": "A transient container aggregating products selected for purchase prior to checkout, associated with a session or user account.",
+  "related": [
+    "stp:ecommerce.001",
+    "stp:ecommerce.005"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

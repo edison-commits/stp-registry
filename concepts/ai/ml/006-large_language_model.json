@@ -1,0 +1,24 @@
+{
+  "id": "stp:ai.ml.006",
+  "ref": "large_language_model",
+  "domain": "ai.ml",
+  "label": "Large Language Model",
+  "aliases": [
+    "LLM",
+    "large language model",
+    "language model",
+    "GPT",
+    "foundation model",
+    "base model"
+  ],
+  "definition": "A neural language model trained on large-scale text corpora, typically based on the transformer architecture, capable of generating and understanding natural language across diverse tasks.",
+  "related": [
+    "stp:ai.ml.004",
+    "stp:ai.ml.001",
+    "stp:ai.ml.007",
+    "stp:ai.ml.010"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

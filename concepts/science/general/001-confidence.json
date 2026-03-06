@@ -1,0 +1,21 @@
+{
+  "id": "stp:science.001",
+  "ref": "confidence",
+  "domain": "science.general",
+  "label": "Confidence Score",
+  "aliases": [
+    "confidence",
+    "confidence score",
+    "certainty",
+    "probability",
+    "credence",
+    "reliability score"
+  ],
+  "definition": "A numerical value in [0, 1] quantifying the degree of epistemic certainty associated with a claim or relation, derived from evidence quality, source authority, and corroboration.",
+  "related": [
+    "stp:science.002"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

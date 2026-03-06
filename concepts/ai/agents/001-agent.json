@@ -1,0 +1,23 @@
+{
+  "id": "stp:ai.agents.001",
+  "ref": "agent",
+  "domain": "ai.agents",
+  "label": "AI Agent",
+  "aliases": [
+    "AI agent",
+    "agent",
+    "autonomous agent",
+    "LLM agent",
+    "software agent",
+    "agentic AI"
+  ],
+  "definition": "An AI system capable of perceiving its environment, planning actions, using tools, and executing multi-step tasks autonomously toward a specified goal without continuous human direction.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.agents.002",
+    "stp:ai.agents.003"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

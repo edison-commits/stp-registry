@@ -1,0 +1,20 @@
+{
+  "id": "stp:ai.ml.002",
+  "ref": "training",
+  "domain": "ai.ml",
+  "label": "Model Training",
+  "aliases": [
+    "training",
+    "model training",
+    "learning",
+    "optimization"
+  ],
+  "definition": "The process of adjusting a model's parameters by minimizing a loss function over a dataset, typically using gradient-based optimization algorithms.",
+  "related": [
+    "stp:ai.ml.001",
+    "stp:ai.ml.003"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

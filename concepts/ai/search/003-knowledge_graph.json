@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.search.003",
+  "ref": "knowledge_graph",
+  "domain": "ai.search",
+  "label": "Knowledge Graph",
+  "aliases": [
+    "knowledge graph",
+    "knowledge base",
+    "semantic graph",
+    "entity graph",
+    "KG"
+  ],
+  "definition": "A structured representation of entities and the typed relationships between them, enabling machine reasoning over interconnected facts with formal semantics.",
+  "related": [
+    "stp:ai.search.001",
+    "stp:ai.search.002"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

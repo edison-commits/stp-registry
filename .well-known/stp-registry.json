@@ -1,0 +1,11 @@
+{
+  "stp_version": "0.1",
+  "registry_url": "https://semanticweb.dev",
+  "index_url": "https://semanticweb.dev/index.json",
+  "aliases_url": "https://semanticweb.dev/aliases.json",
+  "domains_url": "https://semanticweb.dev/domains.json",
+  "concept_base": "https://semanticweb.dev/concepts",
+  "keys_url": "https://semanticweb.dev/.well-known/stp-keys.json",
+  "updated": "2026-03-06",
+  "concept_count": 33
+}

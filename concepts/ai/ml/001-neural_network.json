@@ -1,0 +1,21 @@
+{
+  "id": "stp:ai.ml.001",
+  "ref": "neural_network",
+  "domain": "ai.ml",
+  "label": "Neural Network",
+  "aliases": [
+    "neural net",
+    "artificial neural network",
+    "ANN",
+    "deep neural network",
+    "DNN"
+  ],
+  "definition": "A computational model composed of interconnected nodes organized in layers, inspired by biological neural structures, that learns patterns from data through iterative weight adjustment.",
+  "related": [
+    "stp:ai.ml.004",
+    "stp:ai.ml.006"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}

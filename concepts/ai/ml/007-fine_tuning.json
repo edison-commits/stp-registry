@@ -1,0 +1,22 @@
+{
+  "id": "stp:ai.ml.007",
+  "ref": "fine_tuning",
+  "domain": "ai.ml",
+  "label": "Fine-Tuning",
+  "aliases": [
+    "fine-tuning",
+    "fine tuning",
+    "finetuning",
+    "supervised fine-tuning",
+    "SFT",
+    "instruction tuning"
+  ],
+  "definition": "The process of further training a pre-trained model on a smaller, task-specific dataset to adapt its capabilities to a particular domain or set of behaviors.",
+  "related": [
+    "stp:ai.ml.006",
+    "stp:ai.ml.008"
+  ],
+  "protected": false,
+  "added": "2026-03-06",
+  "version": 1
+}
