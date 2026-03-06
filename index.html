@@ -10,168 +10,433 @@
 <meta property="og:url" content="https://semanticweb.dev">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 :root{
-  --bg:#06060a;--surface:#08080f;--surface2:#0c0c16;
-  --border:#111118;--border2:#1a1a28;
-  --text:#5a5a8a;--bright:#c8c8e0;--muted:#252535;--dim:#383858;
-  --green:#34d399;--red:#f43f5e;--blue:#60a5fa;--purple:#a78bfa;
-  --orange:#fb923c;--yellow:#fbbf24;--teal:#2dd4bf;
+  --bg:#ffffff;
+  --bg2:#f9fafb;
+  --bg3:#f3f4f6;
+  --border:#e5e7eb;
+  --border2:#d1d5db;
+  --text:#111827;
+  --muted:#6b7280;
+  --faint:#9ca3af;
+  --blue:#3b82f6;
+  --blue-light:#eff6ff;
+  --blue-border:#bfdbfe;
+  --green:#10b981;
+  --green-light:#ecfdf5;
+  --green-border:#a7f3d0;
+  --orange:#f59e0b;
+  --orange-light:#fffbeb;
+  --purple:#8b5cf6;
+  --purple-light:#f5f3ff;
+  --red:#ef4444;
+  --red-light:#fef2f2;
+  /* dark section vars */
+  --dark-bg:#09090f;
+  --dark-surface:#0f0f1a;
+  --dark-border:#1e1e30;
+  --dark-text:#8888aa;
+  --dark-bright:#c8c8e0;
+  --dark-dim:#3a3a5c;
 }
+
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;border-bottom:1px solid var(--border);background:rgba(6,6,10,0.95);backdrop-filter:blur(16px)}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--bright);letter-spacing:0.2em}
-.nav-links{display:flex;gap:4px;align-items:center}
-.nav-links a{font-family:'Inter',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.08em;color:var(--text);text-decoration:none;padding:6px 12px;border-radius:4px;border:1px solid transparent;transition:all .2s}
-.nav-links a:hover{color:var(--bright);border-color:var(--border2)}
-.nav-cta{color:var(--green)!important;border-color:rgba(52,211,153,0.25)!important;background:rgba(52,211,153,0.05)!important}
-.nav-cta:hover{background:rgba(52,211,153,0.1)!important}
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;height:60px;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:16px;
+  color:var(--text);letter-spacing:0.15em;text-decoration:none;
+}
+.nav-links{display:flex;gap:2px;align-items:center}
+.nav-links a{
+  font-size:12px;font-weight:500;letter-spacing:0.07em;
+  color:var(--muted);text-decoration:none;
+  padding:6px 12px;border-radius:6px;
+  transition:color .15s, background .15s;
+}
+.nav-links a:hover{color:var(--text);background:var(--bg2)}
+.nav-cta{
+  color:var(--blue)!important;
+  background:var(--blue-light)!important;
+  margin-left:6px;
+}
+.nav-cta:hover{background:var(--blue-border)!important}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 24px 80px;text-align:center;position:relative;overflow:hidden}
-.hero-glow{position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(ellipse,rgba(96,165,250,0.05) 0%,transparent 65%);pointer-events:none}
-.hero-glow2{position:absolute;bottom:-200px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(ellipse,rgba(167,139,250,0.04) 0%,transparent 65%);pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:0.12em;color:var(--blue);border:1px solid rgba(96,165,250,0.2);background:rgba(96,165,250,0.05);padding:6px 18px;border-radius:20px;margin-bottom:32px}
-.pulse{width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-h1{font-family:'Syne',sans-serif;font-size:clamp(38px,6vw,76px);font-weight:800;color:var(--bright);line-height:1.05;letter-spacing:-.025em;margin-bottom:24px;max-width:840px}
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:100px 24px 80px;
+  text-align:center;
+  background:var(--bg);
+  position:relative;
+}
+.hero::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;
+  height:1px;background:var(--border);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:600;letter-spacing:0.1em;
+  color:var(--blue);
+  border:1px solid var(--blue-border);
+  background:var(--blue-light);
+  padding:6px 16px;border-radius:100px;
+  margin-bottom:36px;
+}
+.pulse{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--blue);
+  box-shadow:0 0 0 0 rgba(59,130,246,0.4);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(59,130,246,0.4)}
+  70%{box-shadow:0 0 0 6px rgba(59,130,246,0)}
+  100%{box-shadow:0 0 0 0 rgba(59,130,246,0)}
+}
+h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(42px,6.5vw,80px);
+  font-weight:800;
+  color:var(--text);
+  line-height:1.05;
+  letter-spacing:-0.03em;
+  margin-bottom:24px;
+  max-width:860px;
+}
 h1 em{font-style:normal;color:var(--blue)}
-.hero-sub{font-size:18px;font-weight:400;color:var(--text);max-width:520px;line-height:1.75;margin-bottom:48px}
-.ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:72px}
-.btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.08em;padding:12px 26px;border-radius:5px;text-decoration:none;transition:all .2s;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-.btn-primary{background:var(--blue);color:#06060a;border:1px solid var(--blue)}
-.btn-primary:hover{opacity:.85;transform:translateY(-1px)}
-.btn-ghost{background:transparent;color:var(--bright);border:1px solid var(--border2)}
-.btn-ghost:hover{border-color:rgba(200,200,224,.3);background:rgba(200,200,224,.04)}
-.btn-green{background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.25)}
-.btn-green:hover{background:rgba(52,211,153,.15)}
+.hero-sub{
+  font-size:18px;font-weight:400;
+  color:var(--muted);
+  max-width:540px;line-height:1.75;
+  margin-bottom:44px;
+}
+.ctas{
+  display:flex;gap:12px;flex-wrap:wrap;
+  justify-content:center;margin-bottom:64px;
+}
+.btn{
+  font-size:13px;font-weight:600;letter-spacing:0.06em;
+  padding:12px 24px;border-radius:8px;
+  text-decoration:none;transition:all .15s;
+  display:inline-flex;align-items:center;gap:8px;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--blue);color:#fff;
+  border:1px solid var(--blue);
+}
+.btn-primary:hover{background:#2563eb;border-color:#2563eb;transform:translateY(-1px)}
+.btn-ghost{
+  background:var(--bg);color:var(--text);
+  border:1px solid var(--border2);
+}
+.btn-ghost:hover{background:var(--bg2);border-color:var(--border2);transform:translateY(-1px)}
+.btn-green{
+  background:var(--green-light);color:var(--green);
+  border:1px solid var(--green-border);
+}
+.btn-green:hover{background:#d1fae5;transform:translateY(-1px)}
 
-/* STAT BAR */
-.stat-bar{display:flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--surface);max-width:720px;width:100%}
-.stat-item{flex:1;padding:22px 24px;text-align:center;border-right:1px solid var(--border)}
+/* ─── STAT BAR ─── */
+.stat-bar{
+  display:flex;
+  border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;background:var(--bg);
+  max-width:680px;width:100%;
+  box-shadow:0 1px 3px rgba(0,0,0,0.06);
+}
+.stat-item{
+  flex:1;padding:24px 20px;text-align:center;
+  border-right:1px solid var(--border);
+}
 .stat-item:last-child{border-right:none}
-.stat-num{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;display:block;margin-bottom:6px}
-.stat-lbl{font-size:11px;font-weight:500;letter-spacing:.1em;color:var(--dim);display:block}
+.stat-num{
+  font-family:'Syne',sans-serif;
+  font-size:40px;font-weight:800;
+  display:block;margin-bottom:6px;line-height:1;
+}
+.stat-lbl{
+  font-size:11px;font-weight:600;letter-spacing:0.1em;
+  color:var(--faint);display:block;text-transform:uppercase;
+}
 
-/* SECTION */
-.section{max-width:960px;margin:0 auto;padding:88px 24px}
-.sec-tag{font-size:11px;font-weight:600;letter-spacing:.15em;color:var(--dim);margin-bottom:14px}
-h2{font-family:'Syne',sans-serif;font-size:clamp(26px,3vw,40px);font-weight:800;color:var(--bright);margin-bottom:16px;line-height:1.15}
-.lead{font-size:17px;color:var(--text);max-width:600px;line-height:1.8;margin-bottom:40px}
-hr{border:none;border-top:1px solid var(--border)}
+/* ─── SECTION LAYOUT ─── */
+.section{max-width:1080px;margin:0 auto;padding:96px 24px}
+.section-inner{max-width:960px}
+.sec-tag{
+  font-size:12px;font-weight:700;letter-spacing:0.15em;
+  color:var(--faint);margin-bottom:12px;text-transform:uppercase;
+}
+h2{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(28px,3.5vw,44px);
+  font-weight:800;color:var(--text);
+  margin-bottom:18px;line-height:1.1;
+  letter-spacing:-0.02em;
+}
+.lead{
+  font-size:17px;color:var(--muted);
+  max-width:620px;line-height:1.8;margin-bottom:48px;
+}
+.section-divider{border:none;border-top:1px solid var(--border)}
 
-/* PROBLEM GRID */
-.prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:40px}
-.prob-card{background:var(--surface);padding:24px}
-.prob-tag{font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--red);margin-bottom:10px}
-.prob-title{font-size:15px;font-weight:700;color:var(--bright);margin-bottom:8px}
-.prob-body{font-size:14px;color:var(--text);line-height:1.7}
+/* ─── PROBLEM GRID ─── */
+.prob-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;margin-bottom:40px;
+}
+.prob-card{background:var(--bg);padding:28px 24px}
+.prob-tag{
+  font-size:11px;font-weight:700;letter-spacing:0.1em;
+  color:var(--red);margin-bottom:10px;text-transform:uppercase;
+}
+.prob-title{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px}
+.prob-body{font-size:15px;color:var(--muted);line-height:1.65}
 
-/* CODE BLOCK */
-.code-wrap{background:#030306;border:1px solid var(--border);border-radius:6px;padding:24px;font-family:'DM Mono',monospace;font-size:13px;line-height:1.75;overflow-x:auto;margin-bottom:16px}
-.ck{color:var(--blue)}.cs{color:var(--green)}.cn{color:var(--orange)}.ct{color:var(--purple)}.cc{color:var(--dim)}
+/* ─── BLOCKQUOTE ─── */
+blockquote{
+  border-left:3px solid var(--blue);
+  padding:20px 28px;
+  background:var(--blue-light);
+  border-radius:0 10px 10px 0;
+  margin:40px 0;
+}
+blockquote p{font-size:17px;color:var(--text);line-height:1.75;font-style:italic}
 
-/* LAYERS */
-.layers{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.layer{display:flex;align-items:flex-start;gap:20px;padding:24px 28px;background:var(--surface);border-left:3px solid transparent;transition:background .2s}
-.layer:hover{background:var(--bg)}
+/* ─── CODE BLOCK ─── */
+.code-wrap{
+  background:#0d1117;
+  border:1px solid #30363d;
+  border-radius:10px;
+  padding:28px;
+  font-family:'DM Mono',monospace;
+  font-size:13.5px;line-height:1.8;
+  overflow-x:auto;margin-bottom:20px;
+  color:#c9d1d9;
+}
+.ck{color:#79c0ff}.cs{color:#a5d6ff}.cn{color:#ffa657}.ct{color:#d2a8ff}.cc{color:#8b949e}
+.code-note{font-size:14px;color:var(--muted);line-height:1.7}
+.code-note strong{color:var(--text)}
+
+/* ─── ARCHITECTURE LAYERS ─── */
+.layers{
+  display:flex;flex-direction:column;gap:1px;
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;
+}
+.layer{
+  display:flex;align-items:flex-start;gap:20px;
+  padding:28px 32px;background:var(--bg);
+  border-left:4px solid transparent;transition:background .15s;
+}
+.layer:hover{background:var(--bg2)}
 .l1{border-left-color:var(--green)}.l2{border-left-color:var(--blue)}.l3{border-left-color:var(--purple)}
-.layer-num{font-size:11px;font-weight:600;color:var(--dim);min-width:28px;margin-top:3px}
+.layer-num{
+  font-size:12px;font-weight:700;letter-spacing:0.08em;
+  color:var(--faint);min-width:28px;margin-top:4px;
+}
 .layer-body{flex:1}
-.layer-title{font-size:16px;font-weight:700;color:var(--bright);margin-bottom:6px}
-.layer-desc{font-size:14px;color:var(--text);line-height:1.7}
-.badge{font-size:11px;font-weight:500;letter-spacing:.06em;padding:4px 10px;border-radius:3px;white-space:nowrap;margin-top:2px;align-self:flex-start}
-.badge-active{background:rgba(52,211,153,.08);color:var(--green);border:1px solid rgba(52,211,153,.2)}
-.badge-spec{background:rgba(96,165,250,.08);color:var(--blue);border:1px solid rgba(96,165,250,.2)}
-.badge-proto{background:rgba(42,42,66,.5);color:var(--dim);border:1px solid var(--border2)}
+.layer-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:6px}
+.layer-desc{font-size:15px;color:var(--muted);line-height:1.65}
+.badge{
+  font-size:11px;font-weight:600;letter-spacing:0.07em;
+  padding:5px 12px;border-radius:100px;
+  white-space:nowrap;align-self:flex-start;margin-top:2px;
+}
+.badge-active{background:var(--green-light);color:var(--green);border:1px solid var(--green-border)}
+.badge-spec{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-border)}
+.badge-proto{background:var(--bg3);color:var(--muted);border:1px solid var(--border2)}
 
-/* NUMBERS */
-.num-table{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:20px}
-.num-table th{background:var(--surface);padding:12px 18px;text-align:left;font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--dim);border-bottom:1px solid var(--border)}
-.num-table td{padding:14px 18px;font-size:14px;border-bottom:1px solid var(--border);background:var(--bg);color:var(--text)}
+/* ─── NUMBERS / TABLES ─── */
+.num-table{
+  width:100%;border-collapse:collapse;
+  border:1px solid var(--border);border-radius:10px;
+  overflow:hidden;margin-bottom:20px;
+  font-size:15px;
+}
+.num-table th{
+  background:var(--bg2);padding:12px 20px;
+  text-align:left;font-size:11px;font-weight:700;
+  letter-spacing:0.1em;color:var(--faint);
+  border-bottom:1px solid var(--border);text-transform:uppercase;
+}
+.num-table td{
+  padding:14px 20px;
+  border-bottom:1px solid var(--border);
+  color:var(--muted);
+}
 .num-table tr:last-child td{border-bottom:none}
 .hl{color:var(--green)!important;font-weight:700}
-.row-hl td{background:rgba(52,211,153,.025)!important}
-.note{font-size:13px;color:var(--dim)}
+.row-hl td{background:var(--green-light)!important}
+.note{font-size:13px;color:var(--faint)}
+.numbers-caveat{font-size:14px;color:var(--muted);line-height:1.75;margin-top:16px}
 
-/* PROTOTYPES GRID */
-.proto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.proto-card{background:var(--surface);padding:24px;transition:background .2s;cursor:default}
-.proto-card:hover{background:var(--surface2)}
-.proto-num{font-size:11px;font-weight:500;color:var(--dim);margin-bottom:10px}
-.proto-name{font-size:15px;font-weight:700;color:var(--bright);margin-bottom:8px}
-.proto-desc{font-size:14px;color:var(--text);line-height:1.7;margin-bottom:12px}
-.proto-stat{font-size:11px;font-weight:500;color:var(--blue);letter-spacing:.06em}
-
-/* BLOG */
-.blog-list{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.blog-item{display:flex;align-items:center;gap:20px;padding:18px 24px;background:var(--surface);border-left:3px solid var(--border2);text-decoration:none;transition:all .2s}
-.blog-item:hover{background:var(--bg);border-left-color:var(--blue)}
-.blog-num{font-size:12px;font-weight:500;color:var(--dim);min-width:22px}
-.blog-title{font-size:15px;font-weight:600;color:var(--bright);flex:1}
-.blog-excerpt{font-size:13px;color:var(--text);margin-top:4px}
-.blog-arrow{font-size:14px;color:var(--dim)}
-
-/* QUOTE */
-blockquote{border-left:3px solid var(--blue);padding:18px 26px;background:rgba(96,165,250,.04);border-radius:0 6px 6px 0;margin:36px 0}
-blockquote p{font-size:17px;color:var(--bright);line-height:1.7;font-style:italic}
-
-/* CTA SECTION */
-.cta-block{text-align:center;border:1px solid var(--border);border-radius:10px;padding:64px 40px;background:var(--surface);max-width:960px;margin:0 auto 100px;position:relative;overflow:hidden}
-.cta-block::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(96,165,250,.06) 0%,transparent 70%);pointer-events:none}
-
-/* TIMELINE SECTION */
-.timeline{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
-.tl-item{display:flex;gap:20px;padding:20px 26px;background:var(--surface);border-left:3px solid var(--border2)}
+/* ─── TIMELINE ─── */
+.timeline{
+  display:flex;flex-direction:column;gap:1px;
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;
+}
+.tl-item{
+  display:flex;gap:20px;padding:22px 28px;
+  background:var(--bg);border-left:4px solid var(--border);
+}
 .tl-item.milestone{border-left-color:var(--green)}
 .tl-item.challenge{border-left-color:var(--red)}
-.tl-item.shift{border-left-color:var(--yellow)}
-.tl-date{font-size:12px;font-weight:600;color:var(--blue);min-width:64px;margin-top:2px}
+.tl-item.shift{border-left-color:var(--orange)}
+.tl-date{
+  font-size:12px;font-weight:700;color:var(--blue);
+  min-width:68px;margin-top:2px;letter-spacing:0.04em;
+}
 .tl-body{flex:1}
-.tl-title{font-size:14px;font-weight:700;color:var(--bright);margin-bottom:4px}
-.tl-text{font-size:14px;color:var(--text);line-height:1.65}
-.tl-delta{font-size:12px;margin-left:4px}
-.up{color:var(--green)}.dn{color:var(--red)}
+.tl-title{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.tl-text{font-size:14px;color:var(--muted);line-height:1.65}
+.tl-delta{font-size:12px;margin-left:2px}
+.up{color:var(--green);font-weight:600}
+.dn{color:var(--red);font-weight:600}
 
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)}
+/* ─── PROTOTYPES — DARK SECTION ─── */
+.proto-section{
+  background:var(--dark-bg);
+  padding:96px 0;
+  border-top:1px solid #111;
+  border-bottom:1px solid #111;
+}
+.proto-inner{max-width:1080px;margin:0 auto;padding:0 24px}
+.proto-section .sec-tag{color:var(--dark-dim)}
+.proto-section h2{color:var(--dark-bright)}
+.proto-section .lead{color:var(--dark-text)}
+.proto-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:1px;background:var(--dark-border);
+  border:1px solid var(--dark-border);border-radius:12px;overflow:hidden;
+}
+.proto-card{
+  background:var(--dark-surface);padding:28px;
+  transition:background .15s;cursor:default;
+}
+.proto-card:hover{background:#131325}
+.proto-num{
+  font-size:11px;font-weight:700;
+  color:var(--dark-dim);margin-bottom:10px;letter-spacing:0.08em;
+}
+.proto-name{font-size:16px;font-weight:700;color:var(--dark-bright);margin-bottom:8px}
+.proto-desc{font-size:14px;color:var(--dark-text);line-height:1.65;margin-bottom:14px}
+.proto-stat{
+  font-size:11px;font-weight:600;letter-spacing:0.08em;
+  color:#60a5fa;text-transform:uppercase;
+}
+.proto-cta{margin-top:32px;text-align:center}
+.proto-cta .btn-ghost{
+  background:transparent;color:var(--dark-bright);
+  border:1px solid var(--dark-border);
+}
+.proto-cta .btn-ghost:hover{background:var(--dark-surface);border-color:#2a2a44}
+
+/* ─── BLOG ─── */
+.blog-list{
+  display:flex;flex-direction:column;gap:1px;
+  border:1px solid var(--border);border-radius:12px;overflow:hidden;
+}
+.blog-item{
+  display:flex;align-items:center;gap:20px;
+  padding:20px 24px;background:var(--bg);
+  border-left:4px solid var(--border);
+  text-decoration:none;transition:all .15s;
+}
+.blog-item:hover{background:var(--bg2);border-left-color:var(--blue)}
+.blog-num{font-size:12px;font-weight:700;color:var(--faint);min-width:24px}
+.blog-title{font-size:15px;font-weight:600;color:var(--text);flex:1}
+.blog-excerpt{font-size:13px;color:var(--muted);margin-top:3px}
+.blog-arrow{font-size:14px;color:var(--faint)}
+
+/* ─── CTA BLOCK ─── */
+.cta-section{padding:0 24px 96px;background:var(--bg2)}
+.cta-block{
+  max-width:1080px;margin:0 auto;
+  text-align:center;
+  border:1px solid var(--border);border-radius:16px;
+  padding:72px 40px;background:var(--bg);
+  box-shadow:0 1px 3px rgba(0,0,0,0.05);
+}
+.cta-block h2{margin-bottom:16px}
+.cta-block .lead{margin:0 auto 36px;text-align:center}
+
+/* ─── FOOTER ─── */
+footer{
+  border-top:1px solid var(--border);
+  padding:28px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;background:var(--bg);
+}
+footer span{font-size:12px;font-weight:500;letter-spacing:0.07em;color:var(--faint)}
 .footer-links{display:flex;gap:24px}
-.footer-links a{color:var(--text);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.06em;transition:color .2s}
-.footer-links a:hover{color:var(--bright)}
+.footer-links a{
+  color:var(--muted);text-decoration:none;
+  font-size:12px;font-weight:500;letter-spacing:0.06em;
+  transition:color .15s;
+}
+.footer-links a:hover{color:var(--text)}
 
-@media(max-width:640px){
+/* ─── MOBILE ─── */
+@media(max-width:700px){
+  nav{padding:0 16px}
+  .nav-links a{padding:5px 8px;font-size:11px}
   .stat-bar{flex-direction:column}
   .stat-item{border-right:none;border-bottom:1px solid var(--border)}
-  nav{padding:12px 16px}
-  .nav-links a{padding:5px 8px;font-size:11px}
+  .stat-item:last-child{border-bottom:none}
+  .layer{flex-direction:column;gap:12px;padding:24px}
+  .badge{align-self:flex-start}
   .proto-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;text-align:center}
+  .num-table{font-size:13px}
+  .num-table th,.num-table td{padding:10px 12px}
 }
 </style>
 </head>
 <body>
 
+<!-- ─── NAV ─── -->
 <nav>
   <div class="nav-logo">STP</div>
   <div class="nav-links">
-    <a href="#problem">PROBLEM</a>
-    <a href="#how">SPEC</a>
-    <a href="#numbers">NUMBERS</a>
-    <a href="#prototypes">PROTOTYPES</a>
-    <a href="#blog">BLOG</a>
-    <a href="https://github.com/edison-commits/stp-protocol" target="_blank" class="nav-cta">GITHUB →</a>
+    <a href="#problem">Problem</a>
+    <a href="#how">Spec</a>
+    <a href="#numbers">Numbers</a>
+    <a href="#prototypes">Prototypes</a>
+    <a href="#blog">Blog</a>
+    <a href="https://github.com/edison-commits/stp-protocol" target="_blank" class="nav-cta">GitHub →</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ─── HERO ─── -->
 <div class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
   <div class="hero-badge"><div class="pulse"></div>STP/0.1 — DRAFT — ACTIVE DEVELOPMENT</div>
   <h1>The web was built<br>for <em>human eyes</em>.</h1>
   <p class="hero-sub">Every AI agent reads the same pages and rebuilds the same semantic understanding from scratch. There is no shared semantic layer. STP is that layer.</p>
@@ -181,49 +446,58 @@ footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)
     <a href="https://blog.idiotic.solutions" target="_blank" class="btn btn-green">DEVELOPMENT BLOG</a>
   </div>
   <div class="stat-bar">
-    <div class="stat-item"><span class="stat-num" style="color:var(--green)">39×</span><span class="stat-lbl">FEWER TOKENS THAN RAG</span></div>
-    <div class="stat-item"><span class="stat-num" style="color:var(--orange)">21.8×</span><span class="stat-lbl">FASTER THAN BROWSER AUTOMATION</span></div>
-    <div class="stat-item"><span class="stat-num" style="color:var(--purple)">112×</span><span class="stat-lbl">COMPRESSION VS RAW HTML</span></div>
+    <div class="stat-item">
+      <span class="stat-num" style="color:var(--green)">39×</span>
+      <span class="stat-lbl">Fewer tokens than RAG</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" style="color:var(--orange)">21.8×</span>
+      <span class="stat-lbl">Faster than browser automation</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num" style="color:var(--purple)">112×</span>
+      <span class="stat-lbl">Compression vs raw HTML</span>
+    </div>
   </div>
 </div>
 
-<hr>
-
-<!-- PROBLEM -->
+<!-- ─── PROBLEM ─── -->
 <section class="section" id="problem">
-  <div class="sec-tag">01 — THE PROBLEM</div>
+  <div class="sec-tag">01 — The Problem</div>
   <h2>Current workarounds<br>are inadequate.</h2>
-  <p class="lead">The modern web was designed for human eyes. When an AI agent needs to read a webpage, it reverses engineers meaning from a presentation layer never intended for machines. The waste is structural.</p>
+  <p class="lead">The modern web was designed for human eyes. When an AI agent needs to read a webpage, it reverse-engineers meaning from a presentation layer never intended for machines. The waste is structural.</p>
   <div class="prob-grid">
     <div class="prob-card">
-      <div class="prob-tag">HTML PARSING</div>
+      <div class="prob-tag">HTML Parsing</div>
       <div class="prob-title">Brittle by design</div>
       <div class="prob-body">Breaks on redesigns. Can't infer semantic relationships — only structure. One CSS change breaks the agent.</div>
     </div>
     <div class="prob-card">
-      <div class="prob-tag">LLM COMPREHENSION</div>
+      <div class="prob-tag">LLM Comprehension</div>
       <div class="prob-title">Token-heavy</div>
       <div class="prob-body">A 4,000-word article becomes ~40 semantic facts — after burning the full token budget to get there.</div>
     </div>
     <div class="prob-card">
-      <div class="prob-tag">JSON-LD / SCHEMA.ORG</div>
+      <div class="prob-tag">JSON-LD / Schema.org</div>
       <div class="prob-title">Not relational</div>
       <div class="prob-body">Describes what a page <em>is</em> for search snippets. Not what it <em>means</em> relationally. No confidence. No provenance.</div>
     </div>
     <div class="prob-card">
-      <div class="prob-tag">RAG PIPELINES</div>
+      <div class="prob-tag">RAG Pipelines</div>
       <div class="prob-title">Structural waste</div>
       <div class="prob-body">Every agent independently rebuilds the same semantic graph from the same source. The waste compounds at scale.</div>
     </div>
   </div>
-  <blockquote><p>"The web was built for humans. Search engines retrofitted machine readability on top. STP asks a different question: what if we designed the data layer for agents first, and let humans have a translation on request?"</p></blockquote>
+  <blockquote>
+    <p>"The web was built for humans. Search engines retrofitted machine readability on top. STP asks a different question: what if we designed the data layer for agents first, and let humans have a translation on request?"</p>
+  </blockquote>
 </section>
 
-<hr>
+<hr class="section-divider">
 
-<!-- HOW IT WORKS -->
+<!-- ─── HOW IT WORKS ─── -->
 <section class="section" id="how">
-  <div class="sec-tag">02 — HOW IT WORKS</div>
+  <div class="sec-tag">02 — How It Works</div>
   <h2>Same URL. Two audiences.<br>No new infrastructure.</h2>
   <p class="lead">STP embeds a structured semantic block inside any webpage via a script tag. Browsers skip it. Agents parse it and skip the DOM entirely. Where HTML communicates <em>presentation</em> and JSON communicates <em>data</em>, STP communicates meaning.</p>
   <div class="code-wrap"><span class="cc">// Any webpage. Browsers ignore this. Agents read only this.</span>
@@ -245,14 +519,14 @@ footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)
   ]
 }
 &lt;/script&gt;</div>
-  <p style="font-size:14px;color:var(--dim);line-height:1.7">8 relation types. Canonical concept IDs. Confidence scores with provenance chains. Designed to degrade gracefully — pages without STP fall back to HTML parsing. Pages with STP are just <strong style="color:var(--bright)">faster, cheaper, and structurally richer</strong> to consume.</p>
+  <p class="code-note">8 relation types. Canonical concept IDs. Confidence scores with provenance chains. Designed to degrade gracefully — pages without STP fall back to HTML parsing. Pages with STP are just <strong>faster, cheaper, and structurally richer</strong> to consume.</p>
 </section>
 
-<hr>
+<hr class="section-divider">
 
-<!-- ARCHITECTURE -->
+<!-- ─── ARCHITECTURE ─── -->
 <section class="section" id="layers">
-  <div class="sec-tag">03 — ARCHITECTURE</div>
+  <div class="sec-tag">03 — Architecture</div>
   <h2>Three layers.<br>Independently adoptable.</h2>
   <p class="lead">Each layer is safe to ship without the next. The reading layer is inherently safe — nothing executes. The action layer requires a complete security specification first. The A2A protocol can only follow.</p>
   <div class="layers">
@@ -283,30 +557,33 @@ footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)
   </div>
 </section>
 
-<hr>
+<hr class="section-divider">
 
-<!-- NUMBERS -->
+<!-- ─── NUMBERS ─── -->
 <section class="section" id="numbers">
-  <div class="sec-tag">04 — THE NUMBERS</div>
+  <div class="sec-tag">04 — The Numbers</div>
   <h2>Measured honestly.</h2>
   <p class="lead">The RAG comparison is the most practically important — it's what agents actually use today for web reading. The 39× number is robust even with minimal STP blocks because typed structure is categorically richer than prose fragments.</p>
+
   <table class="num-table">
-    <thead><tr><th>COMPARISON</th><th>SAVINGS</th><th>NOTE</th></tr></thead>
+    <thead><tr><th>Comparison</th><th>Savings</th><th>Note</th></tr></thead>
     <tbody>
       <tr><td>STP vs raw HTML</td><td>161×</td><td class="note">Real but not the fair comparison</td></tr>
       <tr><td>STP vs stripped text</td><td>48×</td><td class="note">Assumes well-authored STP block</td></tr>
       <tr class="row-hl"><td>STP vs RAG (5×512 chunks)</td><td class="hl">39× — and more structured</td><td class="note">Use this number.</td></tr>
     </tbody>
   </table>
+
   <table class="num-table">
-    <thead><tr><th>MODEL</th><th>CONVENTIONAL (PAGES / CTX)</th><th>STP (PAGES / CTX)</th></tr></thead>
+    <thead><tr><th>Model</th><th>Conventional (pages / ctx)</th><th>STP (pages / ctx)</th></tr></thead>
     <tbody>
-      <tr><td>Claude Sonnet 200K</td><td style="color:var(--text)">53 pages</td><td class="hl">2,545 pages</td></tr>
-      <tr><td>Gemini 1.5 Pro 1M</td><td style="color:var(--text)">264 pages</td><td class="hl">12,723 pages</td></tr>
+      <tr><td>Claude Sonnet 200K</td><td>53 pages</td><td class="hl">2,545 pages</td></tr>
+      <tr><td>Gemini 1.5 Pro 1M</td><td>264 pages</td><td class="hl">12,723 pages</td></tr>
     </tbody>
   </table>
+
   <table class="num-table">
-    <thead><tr><th>BENCHMARK</th><th>CONVENTIONAL</th><th>STP</th><th>IMPROVEMENT</th></tr></thead>
+    <thead><tr><th>Benchmark</th><th>Conventional</th><th>STP</th><th>Improvement</th></tr></thead>
     <tbody>
       <tr><td>Task completion time</td><td>9.27s</td><td>0.42s</td><td class="hl">21.8× faster</td></tr>
       <tr><td>Bytes processed</td><td>102KB HTML</td><td>892 bytes</td><td class="hl">116× less</td></tr>
@@ -315,14 +592,15 @@ footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)
       <tr><td>Crawler compression</td><td>288KB HTML</td><td>2,620 bytes STP</td><td class="hl">112.5×</td></tr>
     </tbody>
   </table>
-  <p style="font-size:14px;color:var(--dim);line-height:1.75;margin-top:16px">Honest caveat: 48× assumes a well-authored STP block. Real-world numbers in early adoption are probably 20–35× vs extracted text, climbing toward 48× as tooling matures. $9/day saved at 1,000 pages/day at current Claude Sonnet pricing. $928/day at crawler scale (100K pages).</p>
+
+  <p class="numbers-caveat">Honest caveat: 48× assumes a well-authored STP block. Real-world numbers in early adoption are probably 20–35× vs extracted text, climbing toward 48× as tooling matures. $9/day saved at 1,000 pages/day at current Claude Sonnet pricing. $928/day at crawler scale (100K pages).</p>
 </section>
 
-<hr>
+<hr class="section-divider">
 
-<!-- TEMPORAL -->
+<!-- ─── TEMPORAL ─── -->
 <section class="section" id="temporal">
-  <div class="sec-tag">05 — THE TEMPORAL LAYER</div>
+  <div class="sec-tag">05 — The Temporal Layer</div>
   <h2>Static knowledge is easy.<br>STP tracks how it changes.</h2>
   <p class="lead">An agent reading an ML paper from 2023 needs to know that the field's confidence in that claim has since dropped. A static knowledge graph gives it the claim. STP's temporal layer gives it the claim, its current standing, and the event that caused the revision.</p>
   <div class="timeline">
@@ -371,97 +649,95 @@ footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)
   </div>
 </section>
 
-<hr>
-
-<!-- PROTOTYPES -->
-<section class="section" id="prototypes">
-  <div class="sec-tag">06 — PROTOTYPES</div>
-  <h2>12 working prototypes.<br>All open source.</h2>
-  <p class="lead">Every layer of STP is interactive and runnable. Not slides. Not mockups. Working code that demonstrates what the protocol actually does.</p>
-  <div class="proto-grid">
-    <div class="proto-card">
-      <div class="proto-num">01</div>
-      <div class="proto-name">Conflict Resolution Engine</div>
-      <div class="proto-desc">5-criteria deterministic pipeline for contradictory semantic claims. Confidence delta → domain authority → recency → source type → corroboration. UNRESOLVED when all five tie.</div>
-      <div class="proto-stat">4 LIVE TEST CASES</div>
+<!-- ─── PROTOTYPES — DARK ─── -->
+<div class="proto-section" id="prototypes">
+  <div class="proto-inner">
+    <div class="sec-tag">06 — Prototypes</div>
+    <h2>12 working prototypes.<br>All open source.</h2>
+    <p class="lead">Every layer of STP is interactive and runnable. Not slides. Not mockups. Working code that demonstrates what the protocol actually does.</p>
+    <div class="proto-grid">
+      <div class="proto-card">
+        <div class="proto-num">01</div>
+        <div class="proto-name">Conflict Resolution Engine</div>
+        <div class="proto-desc">5-criteria deterministic pipeline for contradictory semantic claims. Confidence delta → domain authority → recency → source type → corroboration. UNRESOLVED when all five tie.</div>
+        <div class="proto-stat">4 LIVE TEST CASES</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">02</div>
+        <div class="proto-name">Security Specification</div>
+        <div class="proto-desc">8 identified threats (3 CRITICAL, avg CVSS 8.5). 9 mitigations. Phase-gated roadmap. Action layer cannot be built until Phase 0 mitigations are implemented.</div>
+        <div class="proto-stat">CVSS MAX 9.8 · 7 UNMITIGATED</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">03</div>
+        <div class="proto-name">Action Layer</div>
+        <div class="proto-desc">Live execution pipeline. Select an action, fill parameters, watch all 5 security checks run in sequence. Payment actions halt for human confirmation. No DOM. No browser.</div>
+        <div class="proto-stat">5-STEP SECURITY PIPELINE</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">04</div>
+        <div class="proto-name">Agent-to-Agent Protocol</div>
+        <div class="proto-desc">Zero natural language. Two agents negotiate via typed STP packets. QUERY → ASSERT → CHALLENGE → RESOLVE → COMPLETE. Watch the exchange happen in real time.</div>
+        <div class="proto-stat">2.7× COMPRESSION VS NL</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">05</div>
+        <div class="proto-name">Unified End-to-End Demo</div>
+        <div class="proto-desc">One agent. One task. Every layer firing in sequence. Registry → Confidence → Conflict → Security → Action → Human Gate → A2A → Complete. Human gate holds at payment until approved.</div>
+        <div class="proto-stat">8 STAGES · 3.6× COMPRESSION</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">06</div>
+        <div class="proto-name">Crawler Simulator</div>
+        <div class="proto-desc">8 pages. One crawler. Zero HTML parsed. Watch the knowledge graph assemble in real time as each page's STP block is read. 13 nodes. 22 edges. 2,620 bytes vs 288KB.</div>
+        <div class="proto-stat">112.5× COMPRESSION</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">07</div>
+        <div class="proto-name">Benchmark</div>
+        <div class="proto-desc">Side-by-side race. Conventional agent (browser + DOM + LLM call) vs STP agent (semantic block + direct API). Same task. The conventional agent hit a CSS selector break mid-run.</div>
+        <div class="proto-stat">21.8× FASTER · 0 SELECTOR BREAKS</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">08</div>
+        <div class="proto-name">STP Block Generator</div>
+        <div class="proto-desc">Paste any URL or article text. Claude extracts concepts, infers typed relations, assigns confidence scores calibrated to source type, outputs a deploy-ready STP block.</div>
+        <div class="proto-stat">30 SECONDS · BRING YOUR API KEY</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">09</div>
+        <div class="proto-name">Diff Engine</div>
+        <div class="proto-desc">Git for semantic graphs. Paste two versions of an STP block. Get a structured diff: concepts added/removed/modified, relations changed, confidence drift, agent cache invalidation recommendation.</div>
+        <div class="proto-stat">3 EXAMPLE SCENARIOS</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">10</div>
+        <div class="proto-name">Validator</div>
+        <div class="proto-desc">Schema errors, injection scan, signature check, registry compliance, confidence range warnings, relation consistency. Everything a developer needs before deploying an STP block to production.</div>
+        <div class="proto-stat">6 VALIDATION CHECKS</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">11</div>
+        <div class="proto-name">Temporal Graph</div>
+        <div class="proto-desc">The AI/ML knowledge graph animated month by month, 2022–2026. Watch concepts gain and lose confidence as papers publish. Watch relations appear, strengthen, weaken, and get overturned. Nobody built this before.</div>
+        <div class="proto-stat">48 MONTHS · 16 CONCEPTS · PLAY →</div>
+      </div>
+      <div class="proto-card">
+        <div class="proto-num">12</div>
+        <div class="proto-name">Concept Registry</div>
+        <div class="proto-desc">23 canonical concepts across 6 domains. Canonical IDs, aliases, domain weights, pre-defined relations. The shared vocabulary that makes STP blocks interoperable across sources.</div>
+        <div class="proto-stat">v1.0 · 6 DOMAINS</div>
+      </div>
     </div>
-    <div class="proto-card">
-      <div class="proto-num">02</div>
-      <div class="proto-name">Security Specification</div>
-      <div class="proto-desc">8 identified threats (3 CRITICAL, avg CVSS 8.5). 9 mitigations. Phase-gated roadmap. Action layer cannot be built until Phase 0 mitigations are implemented.</div>
-      <div class="proto-stat">CVSS MAX 9.8 · 7 UNMITIGATED</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">03</div>
-      <div class="proto-name">Action Layer</div>
-      <div class="proto-desc">Live execution pipeline. Select an action, fill parameters, watch all 5 security checks run in sequence. Payment actions halt for human confirmation. No DOM. No browser.</div>
-      <div class="proto-stat">5-STEP SECURITY PIPELINE</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">04</div>
-      <div class="proto-name">Agent-to-Agent Protocol</div>
-      <div class="proto-desc">Zero natural language. Two agents negotiate via typed STP packets. QUERY → ASSERT → CHALLENGE → RESOLVE → COMPLETE. Watch the exchange happen in real time.</div>
-      <div class="proto-stat">2.7× COMPRESSION VS NL</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">05</div>
-      <div class="proto-name">Unified End-to-End Demo</div>
-      <div class="proto-desc">One agent. One task. Every layer firing in sequence. Registry → Confidence → Conflict → Security → Action → Human Gate → A2A → Complete. Human gate holds at payment until approved.</div>
-      <div class="proto-stat">8 STAGES · 3.6× COMPRESSION</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">06</div>
-      <div class="proto-name">Crawler Simulator</div>
-      <div class="proto-desc">8 pages. One crawler. Zero HTML parsed. Watch the knowledge graph assemble in real time as each page's STP block is read. 13 nodes. 22 edges. 2,620 bytes vs 288KB.</div>
-      <div class="proto-stat">112.5× COMPRESSION</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">07</div>
-      <div class="proto-name">Benchmark</div>
-      <div class="proto-desc">Side-by-side race. Conventional agent (browser + DOM + LLM call) vs STP agent (semantic block + direct API). Same task. The conventional agent hit a CSS selector break mid-run.</div>
-      <div class="proto-stat">21.8× FASTER · 0 SELECTOR BREAKS</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">08</div>
-      <div class="proto-name">STP Block Generator</div>
-      <div class="proto-desc">Paste any URL or article text. Claude extracts concepts, infers typed relations, assigns confidence scores calibrated to source type, outputs a deploy-ready STP block.</div>
-      <div class="proto-stat">30 SECONDS · BRING YOUR API KEY</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">09</div>
-      <div class="proto-name">Diff Engine</div>
-      <div class="proto-desc">Git for semantic graphs. Paste two versions of an STP block. Get a structured diff: concepts added/removed/modified, relations changed, confidence drift, agent cache invalidation recommendation.</div>
-      <div class="proto-stat">3 EXAMPLE SCENARIOS</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">10</div>
-      <div class="proto-name">Validator</div>
-      <div class="proto-desc">Schema errors, injection scan, signature check, registry compliance, confidence range warnings, relation consistency. Everything a developer needs before deploying an STP block to production.</div>
-      <div class="proto-stat">6 VALIDATION CHECKS</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">11</div>
-      <div class="proto-name">Temporal Graph</div>
-      <div class="proto-desc">The AI/ML knowledge graph animated month by month, 2022–2026. Watch concepts gain and lose confidence as papers publish. Watch relations appear, strengthen, weaken, and get overturned. Nobody built this before.</div>
-      <div class="proto-stat">48 MONTHS · 16 CONCEPTS · PLAY →</div>
-    </div>
-    <div class="proto-card">
-      <div class="proto-num">12</div>
-      <div class="proto-name">Concept Registry</div>
-      <div class="proto-desc">23 canonical concepts across 6 domains. Canonical IDs, aliases, domain weights, pre-defined relations. The shared vocabulary that makes STP blocks interoperable across sources.</div>
-      <div class="proto-stat">v1.0 · 6 DOMAINS</div>
+    <div class="proto-cta">
+      <a href="https://github.com/edison-commits/stp-protocol/tree/main/prototypes" target="_blank" class="btn btn-ghost">VIEW ALL ON GITHUB →</a>
     </div>
   </div>
-  <div style="margin-top:20px;text-align:center">
-    <a href="https://github.com/edison-commits/stp-protocol/tree/main/prototypes" target="_blank" class="btn btn-ghost" style="margin:0 auto">VIEW ALL ON GITHUB →</a>
-  </div>
-</section>
+</div>
 
-<hr>
-
-<!-- BLOG -->
+<!-- ─── BLOG ─── -->
 <section class="section" id="blog">
-  <div class="sec-tag">07 — DEVELOPMENT LOG</div>
+  <div class="sec-tag">07 — Development Log</div>
   <h2>Building in public.</h2>
   <p class="lead">Every milestone documented as it ships. The honest numbers, the caveats, the security threats before the features.</p>
   <div class="blog-list">
@@ -533,14 +809,12 @@ footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)
   </div>
 </section>
 
-<hr>
-
-<!-- CTA -->
-<div style="padding:80px 24px 0">
+<!-- ─── CTA ─── -->
+<div class="cta-section">
   <div class="cta-block">
     <div class="sec-tag" style="margin-bottom:16px">STP/0.1 — OPEN SPECIFICATION — MIT LICENSE</div>
-    <h2 style="margin-bottom:14px">The spec is public.<br>The prototypes run.<br>The paper trail is live.</h2>
-    <p style="font-size:16px;color:var(--text);max-width:500px;margin:0 auto 36px;line-height:1.75">12 interactive prototypes. Full security threat model. Benchmark vs conventional agents. 12 development posts + working paper. All open source from day one.</p>
+    <h2>The spec is public.<br>The prototypes run.<br>The paper trail is live.</h2>
+    <p class="lead">12 interactive prototypes. Full security threat model. Benchmark vs conventional agents. 12 development posts + working paper. All open source from day one.</p>
     <div class="ctas" style="margin-bottom:0">
       <a href="https://github.com/edison-commits/stp-protocol" target="_blank" class="btn btn-primary">VIEW ON GITHUB →</a>
       <a href="https://blog.idiotic.solutions" target="_blank" class="btn btn-ghost">DEVELOPMENT BLOG</a>
@@ -549,6 +823,7 @@ footer span{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--dim)
   </div>
 </div>
 
+<!-- ─── FOOTER ─── -->
 <footer>
   <span>SEMANTIC TRANSFER PROTOCOL / STP/0.1 DRAFT / MARCH 2026</span>
   <div class="footer-links">
